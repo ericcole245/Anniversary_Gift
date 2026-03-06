@@ -10,10 +10,6 @@ function countValue() {
     }
 }
 
-function loadWin() {
-    window.location.href="../pre.html" ;
-}
-
 let yearDisplay = document.getElementById("yearCount") ;
 
 function countDown() {
