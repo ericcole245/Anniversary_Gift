@@ -21,6 +21,18 @@
 <!-- local JS -->
     <!--link another page for using github host-->
     <script type="text/javascript">
+        let rangeSlider = document.getElementById("slider") ;
+
+function countValue() {
+    if (rangeSlider.value < 50) {
+        console.log("Average") ;
+    } else if (rangeSlider.value > 50 && rangeSlider.value < 100) {
+        console.log("Not bad! Keep Going") ;
+    } else {
+        setTimeout(loadWin , 1800) ;
+    }
+}
+
         function loadWin() {
             window.location.href = "pre.html" ;
         } 
