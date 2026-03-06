@@ -1,0 +1,224 @@
+body {
+    background : #21252b ;
+    scroll-behavior: smooth;
+}
+
+#backVideo {
+    position: absolute ;
+    right : 0 ;
+    bottom : 0 ;
+    width : 100vw ;
+    height : 100vh ;
+    object-fit: cover ;
+}
+
+.flipDate {
+    position : relative ;
+    width : clamp(340px , 88vw , 500px) ;
+    height : 340px ;
+    user-select : none ;
+    cursor : pointer ;
+    perspective : 1000px ;
+}
+
+
+.cardInner {
+    position : relative ;
+    width : 100% ;
+    height : 100% ;
+    transition : transform 0.8s ;
+    transform-style : preserve-3d ;
+}
+
+.flipDate:hover .cardInner {
+    transform: rotateY(180deg);
+    transform-style : preserve-3d ;
+}
+
+#frontSide , #backSide {
+    position : absolute ;
+    width : 100% ;
+    height : 100% ;
+    top : 0 ;
+    left : 0 ;
+    /* transform: translate(-50% , -50%); */
+    margin : 0 ;
+    backface-visibility : hidden ;
+    background : rgba(255,255,255,0.1) ;
+    border-top : 3px solid #ffffffa4 ;
+    border-left : 3px solid #ffffffa4 ;
+    border-radius : 30px ;
+    box-shadow : 0 0 10px rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    padding : 1em 1.2em ;
+}
+
+#frontSide {
+    
+    z-index : 6 ;
+}
+
+#backSide {
+    display : flex ;
+    align-items : center ;
+    justify-content: center ;
+    z-index : 6 ;
+    transform : rotateY(180deg) ;
+    backface-visibility: hidden ;
+}
+
+.monthLabel, .weekLabel , .dayLabel {
+    font-size : 0.8em ;
+    font-weight : 600 ; 
+    letter-spacing : 1px ;
+    margin : 0 auto ; 
+}
+
+.fas-heart-pulse {
+    font-size : 4em ;
+}
+
+.backText {
+    margin : 0 ;
+    font-size : 2em ;
+    letter-spacing: 1px ;
+}
+
+/* here we go for gif and text appear animation lol jeez */
+
+
+.slideAnimate {
+    position : relative ; 
+    animation : fadeInText both ;
+    animation-timeline: view();
+    z-index : 1 ;
+}
+
+
+.slideAnimate:nth-child(1) {
+    animation-range: entry 10% cover 25% ;
+}
+
+.slideAnimate:nth-child(2) {
+    animation-range: entry 20% cover 35% ;
+}
+
+.slideAnimate:nth-child(3) {
+    animation-range: entry 30% cover 45% ;
+}
+
+.slideAnimate:nth-child(4) {
+    animation-range: entry 40% cover 45% ;
+}
+
+@keyframes fadeInText {
+    0% {
+        transform : translateX(120%) ;
+        opacity : 0 ;
+    } 80% {
+        opacity : 0.2 ;
+    }
+     95% {
+        transform : translateX(0%) ;
+        opacity : 1 ;
+    }
+}
+
+.gifArea {
+    border : none ;
+    border-left : 5px solid #e0e5ec ;
+    overflow: hidden ;
+    background : #21252b ;
+    z-index : 99 ;
+
+}
+
+
+.videoBox {
+    width : 100px ;
+    height : 100px ;
+    background-size : contain ;
+    background-repeat: no-repeat;
+}
+
+.videoBox.firstGif {
+    background-image: url('../sources/videos/4cols/bubu-rub-bubu-love-dudu.webp');
+    animation: appearAni both ;
+    animation-timeline: view() ;
+}
+
+.videoBox.secondGif {
+    background-image: url('../sources/videos/4cols/cute-dudu-face.webp');
+    animation: appearAni both ;
+    animation-timeline: view() ;
+}
+
+.videoBox.thirdGif {
+    background-image: url('../sources/videos/4cols/wee.gif');
+    animation: appearAni both ;
+    animation-timeline: view() ;
+}
+
+.videoBox.fourthGif {
+    background-image : url('../sources/videos/4cols/cute.webp') ;
+    animation: appearAni both ;
+    animation-timeline: view() ;
+}
+
+
+@keyframes appearAni {
+    0% {
+        opacity : 0 ;
+        transform: scale(0.4);
+        display : none ;
+        
+    } 100% {
+        opacity: 1 ;
+        transform : scale(1) ;
+        display : block ;
+    }
+}
+
+.playerBorder {
+    cursor : pointer ;
+    user-select : none ;
+}
+
+.playerBorder:active  .playPause, 
+.playerBorder:hover .playPause{
+    transform : scale(1.2) ;
+}
+
+.playPause {
+    font-size : 3em ;
+    color : #2196F3 ;
+    transform : scale(1) ;
+    transition : transform 0.2s ease-in-out ;
+   
+}
+
+.playPause.active {
+    animation : heartBeat 1.3s linear infinite ,
+    musicHue 4s linear infinite alternate ;
+}
+
+
+@keyframes heartBeat {
+    0% {
+        transform : scale(1.2) ;
+    }  
+    50% {
+        transform : scale(1) ;
+    }
+    100% {
+        transform : scale(1.2) ;
+    }
+}
+
+@keyframes musicHue {
+    0% {
+        filter : hue-rotate(0deg) ;
+    } 100% {
+        filter : hue-rotate(360deg) ;
+    }
+}

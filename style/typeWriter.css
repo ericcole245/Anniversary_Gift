@@ -1,0 +1,82 @@
+.textwriterBox {
+    width : max-content ;
+    height : max-content ;
+    display : inline-block ;
+}
+
+.textBox {
+    font-size : 3em ;
+    letter-spacing: 2px;
+    font-family: monospace ;
+    font-weight: 800 ;
+    width : 100% ;
+    white-space : nowrap ;
+    border-right : 5px solid rgb(17, 81, 255);
+    overflow : hidden ;    
+}
+
+.start-typing {
+    animation : typing 5s steps(15),
+    cursor .4s step-end infinite alternate ;
+}
+
+@keyframes cursor {
+    50% {
+        border-color : transparent ;
+    }
+}
+
+@keyframes typing {
+    from {
+        width : 0 ;
+    }
+    to {
+        width : 100% ;
+    }
+}
+
+.iconBox {
+    width : 100px ;
+    height : 100px ;
+    margin-right : 10px ;
+}
+
+.icon1 , .icon2 , .icon3 , .icon4 ,
+.icon5 , .icon6 , .icon7 , .icon8 {
+    object-fit : contain ;
+    background-size : contain ;
+    background-repeat: no-repeat;
+}
+
+
+.icon1 {
+     background-image : url('../sources/videos/rowStickers/bear-pat.webp') ;
+}
+
+.icon2 {
+     background-image : url('../sources/videos/rowStickers/cuteSticker.webp') ;
+}
+
+.icon3 {
+    background-image : url('../sources/videos/rowStickers/dare-aggie-bunny-dare-bunny.webp') ;
+}
+
+.icon4 {
+    background-image : url('../sources/videos/rowStickers/m.webp') ;
+}
+
+.icon5 {
+    background-image: url('../sources/videos/rowStickers/munch-face.webp');
+}
+
+.icon6 {
+    background-image: url('../sources/videos/rowStickers/peach-goma.webp');
+}
+
+.icon7 {
+    background-image: url('../sources/videos/rowStickers/twitter-cute.webp');
+}
+
+.icon8 {
+    background-image: url('../sources/videos/rowStickers/your-so-cute-mini-seb.gif');
+}
