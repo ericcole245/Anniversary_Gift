@@ -1,14 +1,3 @@
-let rangeSlider = document.getElementById("slider") ;
-
-function countValue() {
-    if (rangeSlider.value < 50) {
-        console.log("Average") ;
-    } else if (rangeSlider.value > 50 && rangeSlider.value < 100) {
-        console.log("Not bad! Keep Going") ;
-    } else {
-        setTimeout(loadWin , 1800) ;
-    }
-}
 
 let yearDisplay = document.getElementById("yearCount") ;
 
