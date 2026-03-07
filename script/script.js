@@ -1,7 +1,7 @@
 
-let yearDisplay = document.getElementById("yearCount") ;
-
 function countDown() {
+    
+    let yearDisplay = document.getElementById("yearCount") ;
     let date = new Date() ;
     let anniInfo = '2018 21:23:45 Mar 25' ;
     let currentYear = date.getFullYear() ;
